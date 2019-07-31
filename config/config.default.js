@@ -24,9 +24,23 @@ module.exports = appInfo => {
     host: '127.0.0.1',
     port: 3306,
     username: 'root',
-    password: 'root',
-    database: 'egg-sequelize-doc-default',
+    password: '929924',
+    database: 'monitordb',
     timezone: '+08:00',
+    dialectOptions: {
+      dateStrings: true,
+      typeCast(field, next) {
+        // for reading from database
+        if (field.type === "DATETIME") {
+          return field.string();
+        }
+        return next();
+      }
+    },
+    define: {
+      underscored: true,
+      charset: 'utf8mb4'
+    }
   };
 
   // add your user config here
