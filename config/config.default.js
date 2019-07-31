@@ -11,6 +11,14 @@ module.exports = appInfo => {
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {};
+
+  // use for cookie sign key, should change to your own and keep security
+  config.keys = appInfo.name + '_1564448483841_1254';
+
+  // add your middleware config here
+  config.middleware = [];
+
+  // sequelize config
   config.sequelize = {
     dialect: 'mysql',
     host: '127.0.0.1',
@@ -18,12 +26,8 @@ module.exports = appInfo => {
     username: 'root',
     password: 'root',
     database: 'egg-sequelize-doc-default',
+    timezone: '+08:00',
   };
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1564448483841_1254';
-
-  // add your middleware config here
-  config.middleware = [];
 
   // add your user config here
   const userConfig = {
