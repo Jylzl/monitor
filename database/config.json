@@ -1,11 +1,17 @@
 {
   "development": {
     "username": "root",
-    "password": "929924",
+    "password": "root",
     "database": "monitordb",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "timezone": "+08:00"
+    "timezone": "+08:00",
+    "define": {
+      "underscored": false,
+      "timestamps": true,
+      "paranoid": true,
+      "charset": "utf8mb4"
+    }
   },
   "test": {
     "username": "root",
@@ -13,6 +19,12 @@
     "database": "egg-sequelize-doc-unittest",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "timezone": "+08:00"
+    "timezone": "+08:00",
+    "define": {
+      "underscored": false,
+      "timestamps": true,
+      "paranoid": true,
+      "charset": "utf8mb4"
+    }
   }
 }
